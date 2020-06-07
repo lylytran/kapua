@@ -11,14 +11,15 @@
  *******************************************************************************/
 package org.eclipse.kapua.app.console.module.data.client;
 
+import org.eclipse.kapua.app.console.module.api.client.ui.view.AbstractView;
+import org.eclipse.kapua.app.console.module.api.shared.model.session.GwtSession;
+import org.eclipse.kapua.app.console.module.data.client.messages.ConsoleDataMessages;
+import org.eclipse.kapua.app.console.module.data.shared.model.permission.DeviceSessionPermission;
+
 import com.extjs.gxt.ui.client.widget.TabPanel;
 import com.extjs.gxt.ui.client.widget.layout.FitLayout;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Element;
-import org.eclipse.kapua.app.console.module.api.client.ui.view.AbstractView;
-import org.eclipse.kapua.app.console.module.api.shared.model.session.GwtSession;
-import org.eclipse.kapua.app.console.module.data.client.messages.ConsoleDataMessages;
-import org.eclipse.kapua.app.console.module.device.shared.model.permission.DeviceSessionPermission;
 
 public class DataView extends AbstractView {
 

@@ -9,7 +9,7 @@
  * Contributors:
  *     Eurotech - initial API and implementation
  *******************************************************************************/
-package org.eclipse.kapua.app.console.module.device.shared.model.permission;
+package org.eclipse.kapua.app.console.module.data.shared.model.permission;
 
 import org.eclipse.kapua.app.console.module.api.shared.model.session.GwtSessionPermission;
 import org.eclipse.kapua.app.console.module.api.shared.model.session.GwtSessionPermissionAction;
