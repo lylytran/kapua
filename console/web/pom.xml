@@ -367,5 +367,18 @@
                 <gwt-maven-plugin.compile.style>OBF</gwt-maven-plugin.compile.style>
             </properties>
         </profile>
+        <profile>
+            <id>dev-tools</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <dependencies>
+            	<dependency>
+           			<groupId>com.h2database</groupId>
+            		<artifactId>h2</artifactId>
+            		<scope>compile</scope>
+        		</dependency>
+            </dependencies>
+        </profile>
     </profiles>
 </project>
