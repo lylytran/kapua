@@ -366,6 +366,35 @@
                                         <ignore/>
                                     </action>
                                 </pluginExecution>
+                                <!-- LLT added -->
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-checkstyle-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>check</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.karaf.tooling</groupId>
+										<artifactId>karaf-maven-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>verify</goal>
+											<goal>features-generate-descriptor</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+					           <!-- end LLT added -->
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
@@ -388,34 +417,34 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${maven-checkstyle-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.eclipse.kapua.build</groupId>
-                            <artifactId>kapua-build-tools</artifactId>
-                            <version>${project.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <artifactId>checkstyle</artifactId>
-                            <version>${checkstyle.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <configLocation>checkstyle/kapua.xml</configLocation>
-                        <suppressionsLocation>checkstyle/kapua.suppressions.xml</suppressionsLocation>
+<!--                 <plugin> -->
+<!--                     <groupId>org.apache.maven.plugins</groupId> -->
+<!--                     <artifactId>maven-checkstyle-plugin</artifactId> -->
+<!--                     <version>${maven-checkstyle-plugin.version}</version> -->
+<!--                     <dependencies> -->
+<!--                         <dependency> -->
+<!--                             <groupId>org.eclipse.kapua.build</groupId> -->
+<!--                             <artifactId>kapua-build-tools</artifactId> -->
+<!--                             <version>${project.version}</version> -->
+<!--                         </dependency> -->
+<!--                         <dependency> -->
+<!--                             <groupId>com.puppycrawl.tools</groupId> -->
+<!--                             <artifactId>checkstyle</artifactId> -->
+<!--                             <version>${checkstyle.version}</version> -->
+<!--                         </dependency> -->
+<!--                     </dependencies> -->
+<!--                     <configuration> -->
+<!--                         <configLocation>checkstyle/kapua.xml</configLocation> -->
+<!--                         <suppressionsLocation>checkstyle/kapua.suppressions.xml</suppressionsLocation> -->
 
-                        <includeResources>false</includeResources>
-                        <includeTestResources>false</includeTestResources>
+<!--                         <includeResources>false</includeResources> -->
+<!--                         <includeTestResources>false</includeTestResources> -->
 
-                        <sourceDirectory>${project.basedir}</sourceDirectory>
-                        <includes>**/*.java, **/*.xml</includes>
-                        <excludes>**/target/**/*, **/.settings/**/*, maven/**/*, .maven/**/*, .idea/**/*, **/node/**/*</excludes>
-                    </configuration>
-                </plugin>
+<!--                         <sourceDirectory>${project.basedir}</sourceDirectory> -->
+<!--                         <includes>**/*.java, **/*.xml</includes> -->
+<!--                         <excludes>**/target/**/*, **/.settings/**/*, maven/**/*, .maven/**/*, .idea/**/*, **/node/**/*</excludes> -->
+<!--                     </configuration> -->
+<!--                 </plugin> -->
             </plugins>
         </pluginManagement>
 
@@ -467,19 +496,19 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>checkstyle-check</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--             <plugin> -->
+<!--                 <groupId>org.apache.maven.plugins</groupId> -->
+<!--                 <artifactId>maven-checkstyle-plugin</artifactId> -->
+<!--                 <executions> -->
+<!--                     <execution> -->
+<!--                         <id>checkstyle-check</id> -->
+<!--                         <phase>validate</phase> -->
+<!--                         <goals> -->
+<!--                             <goal>check</goal> -->
+<!--                         </goals> -->
+<!--                     </execution> -->
+<!--                 </executions> -->
+<!--             </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -1764,7 +1793,7 @@
             </activation>
             <modules>
                 <module>dev-tools</module>
-            </modules>
+            </modules>          
         </profile>
 
         <profile>
