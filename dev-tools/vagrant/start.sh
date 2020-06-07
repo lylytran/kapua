@@ -35,7 +35,7 @@ start_ssh() {
 }
 
 if [[ "$1" == 'develop' ]]; then
-    sh ${SCRIPT_DIR}/destroy.sh $1 || exit 1;
+    bash ${SCRIPT_DIR}/destroy.sh $1 || exit 1;
 
     start_develop
 
@@ -46,7 +46,7 @@ if [[ "$1" == 'develop' ]]; then
     fi
 
 elif [[ "$1" == 'base-box' ]]; then
-    sh ${SCRIPT_DIR}/baseBox/create.sh
+    bash ${SCRIPT_DIR}/baseBox/create.sh
 else
     print_usage_start
     exit 1

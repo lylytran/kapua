@@ -30,7 +30,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     export DEBIAN_FRONTEND=noninteractive
-
     export ELASTICSEARCH_VERSION="5.4.0"
     export H2DB_VERSION="1.4.192"
     export ACTIVE_MQ_VERSION="5.14.5"
@@ -182,9 +181,8 @@ Vagrant.configure(2) do |config|
     mkdir -p lib/ext /var/lib/jetty/start.d /var/lib/jetty/modules
 
     cd /var/lib/jetty/modules
-    curl -O https://raw.githubusercontent.com/jetty-project/logging-modules/master/capture-all/logging.mod
-    curl -O https://raw.githubusercontent.com/jetty-project/logging-modules/master/centralized/webapp-logging.mod
-
+    curl -O https://raw.githubusercontent.com/lylytran/kapua/release-1.2.x/dev-tools/vagrant/baseBox/jetty-fix/logging.mod
+    curl -O https://raw.githubusercontent.com/lylytran/kapua/release-1.2.x/dev-tools/vagrant/baseBox/jetty-fix/webapp-logging.mod
     cd /usr/local/jetty
     java -jar start.jar --approve-all-licenses --create-startd --add-to-start=http,jsp,jstl,websocket,deploy,logging,webapp-logging,jmx,stats -Djetty.base=/var/lib/jetty
 
@@ -203,3 +201,4 @@ Vagrant.configure(2) do |config|
     cat /dev/null > ~/.bash_history && history -c
   SHELL
 end
+
