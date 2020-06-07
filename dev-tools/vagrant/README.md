@@ -1,4 +1,4 @@
-# Manually Running the Kapua on Development Machine
+﻿# Manually Running the Kapua on Development Machine
 This module provides script and configuration files to create a Vagrant machine able to run the following services:
 
 * ActiveMQ
@@ -21,6 +21,11 @@ To create the Kapua base box run the script with `base-box` as first parameter f
 ```
 $ cd $KAPUA_GITHUB_HOME_DIR/dev-tools/vagrant
 $ ./start.sh base-box
+```
+[LLT]: if you find pushd or popd error, so you should run with bash instead, using this:
+```
+$ cd $KAPUA_GITHUB_HOME_DIR/dev-tools/vagrant
+$ bash ./start.sh base-box
 ```
 
 After a while a new box, called ***kapua-dev-box/0.x***, will be created on the system. 
@@ -52,7 +57,7 @@ $ java -cp /usr/local/h2/h2*.jar org.h2.tools.Server -baseDir /home/vagrant/H2/k
 
 Run a full _Kapua_ project build from the project root directory outside of the Vagrant box.
 ```
-$ mvn clean install -DskipTests -P console
+$ mvn clean install -DskipTests -Pconsole,dev-tools
 ```
 
 Once the build has completed the development machine can be accessed.
